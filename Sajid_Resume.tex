@@ -1,5 +1,4 @@
 \documentclass[letterpaper,11pt]{article}
-\setlength{\footskip}{13.6pt}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -13,7 +12,10 @@
 \usepackage{lastpage}
 \usepackage{hyperref}
 \usepackage{ifthen}
-\usepackage{fontawesome5} % <-- ICONS
+\usepackage{fontawesome5}
+\usepackage{array}
+\usepackage{fancyhdr}
+
 \DTMsetdatestyle{ddmmyyyy}
 
 \hypersetup{
@@ -24,25 +26,21 @@
   pdfborder={0 0 1},
 }
 
-\usepackage{fancyhdr}
-\usepackage{array}
-
+% ---------- Fancyhdr ----------
 \pagestyle{fancy}
 \fancyhf{}
-% \fancyfoot[L]{%
-%   \ifthenelse{\equal{\thepage}{\pageref{LastPage}}}{%
-%     Last updated on \today%
-%   }{}%
-% }
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
+% ---------- Margin adjustments ----------
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
+
+% ---------- FIX: footskip (must come AFTER margins) ----------
+\setlength{\footskip}{20pt}
 
 \urlstyle{same}
 
@@ -50,6 +48,7 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+% ---------- Section formatting ----------
 \titleformat{\section}{
   \vspace{-5pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
@@ -63,7 +62,7 @@
 
 \titlespacing*{\subsection}{0pt}{-5pt}{0pt}
 
-% Custom commands
+% ---------- Custom commands ----------
 \newcommand{\resumeItem}[2]{
   \item\small{
     \textbf{#1}{: #2 \vspace{-4pt}}
@@ -97,7 +96,7 @@
   }
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-2pt}} 
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-2pt}}
 
 \newcommand{\projectItem}[4]{
   \item \small{
@@ -115,44 +114,44 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}\vspace{-5pt}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+% ================= DOCUMENT =================
 \begin{document}
 
-%----------CENTERED HEADER WITH ICONS-----------------
+% ---------- Header ----------
 \begin{center}
     {\LARGE \textbf{Md. Sajedul Islam}} \\[6pt]
     Undergraduate Student, Department of CSE, RUET \\[4pt]
-    Rajshahi, Bangladesh \\[6pt]
 
     \faEnvelope\ 
     \href{mailto:m.sajid1495@gmail.com}{m.sajid1495@gmail.com}
     \quad
-    \faPhone\ 
-    +880-1738977967
-    \quad
     \faLinkedin\ 
     \href{https://www.linkedin.com/in/sajidruetcse21/}{sajidruetcse21}
     \quad
+    \faGithub\ 
+    \href{https://github.com/sajid1495}{sajid1495}
+    \quad
     \faGlobe\ 
     \href{https://sajid-porfolio.netlify.app/}{portfolio}
-\end{center}
 
+\end{center}
 
 \vspace{-10pt}
 
-
-
+% ---------- Education ----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Rajshahi University of Engineering and Technology (RUET)}{Rajshahi, Bangladesh}
-      {Bachelor of Science in Computer Science and Engineering, CGPA: 3.40/4.00}
-      {2022 -- Present} 
-    \resumeSubheading
-      {New Government Degree College}{Rajshahi, Bangladesh}
-      {Higher Secondary Certificate (HSC), GPA: 5.00/5.00}{2019 -- 2021}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Rajshahi University of Engineering and Technology (RUET)}{Rajshahi, Bangladesh}
+    {Bachelor of Science in Computer Science and Engineering, CGPA: 3.40/4.00}
+    {2022 -- Present}
+  \resumeSubheading
+    {New Government Degree College}{Rajshahi, Bangladesh}
+    {Higher Secondary Certificate (HSC), GPA: 5.00/5.00}
+    {2019 -- 2021}
+\resumeSubHeadingListEnd
 
-
+% ---------- Projects ----------
 \section{Projects}
 
 \subsection{AI Project}
@@ -196,51 +195,37 @@
     {Terminal-based program simulating a mobile financial service system with account and transaction features.}
     {C / C++ (CLI Application)}
     {\href{https://github.com/sajid1495/myCash}{[GitHub]}}
-
 \resumeSubHeadingListEnd
 
-
-
-
+% ---------- Skills ----------
 \section{Technical Skills}
 \resumeSubHeadingListStart
   \resumeSubItem{Programming Languages}{Python, C, C++, JavaScript, Dart}
-  \resumeSubItem{ML/DL Tools}{NumPy, Pandas, Scikit-learn, OpenCV, PyTorch, TensorFlow }
+  \resumeSubItem{ML/DL Tools}{NumPy, Pandas, Scikit-learn, OpenCV, PyTorch, TensorFlow}
   \resumeSubItem{Web \& App Development}{Next.js, React, Node.js, Flutter, REST APIs}
   \resumeSubItem{Tools}{Git, Linux, Docker, LaTeX}
   \resumeSubItem{Languages}{English (Speaking — Proficient, Writing — Fluent), Bengali (Native)}
 \resumeSubHeadingListEnd
 
-
-
+% ---------- Competitive Programming ----------
 \section{Competitive Programming}
 \resumeSubHeadingListStart
-    \resumeSubItem{Codeforces}{Max Rating - 982 \textbar{} Solved Problems - 250+ \textbar{}  Total Contests - 20+ \textbar{} Handle - \href{https://codeforces.com/profile/SaJiD_96}{sajid\_96}}
-    \resumeSubItem{CodeChef}{Max Rating - 1439 \textbar{} Solved Problems - 50+ \textbar{}  Handle - \href{https://www.codechef.com/users/sajid1495}{sajid1495}}
+  \resumeSubItem{Codeforces}{Max Rating — 982 \textbar{} Solved — 250+ \textbar{} Contests — 20+ \textbar{} Handle — \href{https://codeforces.com/profile/SaJiD_96}{sajid\_96}}
+  \resumeSubItem{CodeChef}{Max Rating — 1439 \textbar{} Solved — 50+ \textbar{} Handle — \href{https://www.codechef.com/users/sajid1495}{sajid1495}}
 \resumeSubHeadingListEnd
 
-
+% ---------- Achievements ----------
 \section{Achievements}
 \resumeSubHeadingListStart
-    \resumeSubItem{Programming Contest}{Placed 10th in CodeSmash-2022 (Intra-RUET Programming Contest).}
-    \resumeSubItem{Academic}{Received Board Scholarship from Rajshahi Education Board in both HSC and SSC examinations.}
-    \resumeSubItem{Co-curricular}{Achieved 1st place in the Divisional Speech Competition and Talent Hunt Competition.}
+  \resumeSubItem{Programming Contest}{Placed 10th in CodeSmash-2022 (Intra-RUET Programming Contest).}
+  \resumeSubItem{Academic}{Received Board Scholarship from Rajshahi Education Board in both HSC and SSC examinations.}
+  \resumeSubItem{Co-curricular}{Achieved 1st place in the Divisional Speech Competition and Talent Hunt Competition.}
 \resumeSubHeadingListEnd
 
+% ---------- Certifications ----------
 \section{Certifications}
 \resumeSubHeadingListStart
-    \resumeSubItem{Aspire Leaders Program}{Completed leadership \& global development fellowship (Aspire Institute).}
+  \resumeSubItem{Aspire Leaders Program}{Completed leadership \& global development fellowship (Aspire Institute).}
 \resumeSubHeadingListEnd
-
-
-% \section{References}
-% \noindent
-% \textbf{Barshon Sen} \\
-% Assistant Professor \\
-% Department of Computer Science \& Engineering, RUET \\
-% Email: \href{mailto:barshon.sen@cse.ruet.ac.bd}{barshon.sen@cse.ruet.ac.bd} \\
-% Website: \href{https://www.cse.ruet.ac.bd/BarshonSeN}{https://www.cse.ruet.ac.bd/BarshonSeN}
-
-
 
 \end{document}

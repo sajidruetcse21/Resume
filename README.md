@@ -4,7 +4,7 @@ This repository contains the LaTeX source code for the resume of Md. Sajedul Isl
 
 ## Project Structure
 - **Sajid_Resume.tex** — Main LaTeX source file for the resume
-- **Sajid_Resume.pdf** — Compiled PDF output (not tracked by git)
+- **Sajid_Resume.pdf** — Compiled PDF output 
 - **.gitignore** — Excludes LaTeX build and temporary files, and VS Code settings
 
 ## Features

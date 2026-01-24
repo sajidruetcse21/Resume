@@ -1,0 +1,30 @@
+# LaTeX build and auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.gz
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.pdf
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.lof
+*.lot
+*.lol
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.xdy
+*.run.xml
+# VS Code settings
+.vscode/
